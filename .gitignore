@@ -1,0 +1,6 @@
+#directories
+venv/
+.idea/
+
+#files
+the-verdict.txt
