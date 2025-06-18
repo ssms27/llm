@@ -10,10 +10,21 @@ urllib.request.urlretrieve(url, file_path)
 with open(file_path, "r", encoding="utf-8") as f:
        raw_text = f.read()
 
-print("Total number of characters in the text:", len(raw_text))  #20479
-print(raw_text[:99])
+# print("Total number of characters in the text:", len(raw_text))  #20479
+# print(raw_text[:99])
 
 preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
 preprocessed = [item.strip() for item in preprocessed if item.strip()]
-print(len(preprocessed))
-print(preprocessed[:30])
+# print(len(preprocessed))
+# print(preprocessed[:30])
+all_words = sorted(set(preprocessed))
+vocab_size = len(all_words)
+print("Vocabulary size:", vocab_size)  # 1130
+print(preprocessed[:50]) # Display first 50 tokens
+
+vocab = {token:integer for integer, token in enumerate(all_words)}
+for i, item in enumerate(vocab.items()):
+       print(item)
+       if i >= 50:
+              break
+
