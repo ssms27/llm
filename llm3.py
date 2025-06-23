@@ -1,4 +1,6 @@
 import urllib.request
+import re
+
 url = ("https://raw.githubusercontent.com/rasbt/" "LLMs-from-Scratch/main/ch02/01_main-chapter-code/" 
        "the-verdict.txt")
 
@@ -14,3 +16,7 @@ print(raw_text[:99])
 preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
 preprocessed = [item.strip() for item in preprocessed if item.strip()]
 print(len(preprocessed))
+
+#Section 2.3
+all_words = sorted(set(preprocessed))
+

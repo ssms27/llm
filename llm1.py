@@ -17,11 +17,14 @@ preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
 preprocessed = [item.strip() for item in preprocessed if item.strip()]
 # print(len(preprocessed))
 # print(preprocessed[:30])
+
+#section 2.3
 all_words = sorted(set(preprocessed))
 vocab_size = len(all_words)
 print("Vocabulary size:", vocab_size)  # 1130
 print(preprocessed[:50]) # Display first 50 tokens
 
+#listing 2.2
 vocab = {token:integer for integer, token in enumerate(all_words)}
 for i, item in enumerate(vocab.items()):
        print(item)
