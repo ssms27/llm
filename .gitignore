@@ -4,4 +4,5 @@ venv/
 
 #files
 the-verdict.txt
+__pycache__/SimpleTokenizerV1.cpython-312.pyc
  
